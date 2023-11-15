@@ -1,0 +1,167 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Configurator</title>
+  <link rel="stylesheet" href="src/index.css">
+</head>
+
+<body>
+  <canvas id="configurator"></canvas>
+  <div id="first" class="controller">
+    <div class="form">
+      <label for="width" class="inputLabel">
+        <p class="label">Width</p>
+        <input class="size" name="widthSlider" id="widthSlider" type="range" min="200" max="2000" />
+        <input class="inputText" name="widthInput" id="widthInput" type="number" max="2000" min="200" minlength="1"
+          maxlength="4" />
+      </label>
+      <label for="length" class="inputLabel">
+        <p class="label">Length</p>
+        <input class="size" name="lengthSlider" id="lengthSlider" type="range" min="200" max="2000" />
+        <input class="inputText" name="lengthInput" id="lengthInput" type="number" max="2000" min="200" minlength="1"
+          maxlength="4" />
+      </label>
+      <label for="height" class="selectLabel">
+        <p class="label">Height</p>
+        <select class="size" name="heightSelect" id="heightSelect">
+          <option value="86.5">N (86.5mm)</option>
+          <option value="91">M(91mm)</option>
+          <option value="129">K(129mm)</option>
+          <option value="192-BOXCAP">E(192mm)-Modular mit BOXCAP</option>
+          <option value="192-BOXCOVER">E(192mm)-Modular mit BOXCOVER</option>
+          <option value="192-Reling">E(192mm)-Modular mit Reling</option>
+          <option value="192-RelingGlass">E(192mm)-Modular mit Reling und Glass</option>
+        </select>
+      </label>
+      <label for="frontType" class="selectLabel">
+        <p class="label">Front Type</p>
+        <select class="size" name="frontTypeSelect" id="frontTypeSelect">
+          <option value="einfacher">Mit einfacher Front</option>
+          <option value="hohem">Mit hohem Einschubelement</option>
+          <option value="niedrigem">Mit niedrigem Einschubelement</option>
+          <option value="querreling">Mit Querreling</option>
+          <option value="geschlossenem">Mit geschlossenem Vorderstück</option>
+        </select>
+      </label>
+      <label for="zargenType" class="selectLabel">
+        <p class="label">Zargen Type</p>
+        <select class="size" name="zargenTypeSelect" id="zargenTypeSelect">
+          <option value="zargen1">Legrabox-Zargen</option>
+          <option value="zargen2">Tandembox-Zargen</option>
+          <option value="zargen3">Merivobox-Zargen</option>
+        </select>
+      </label>
+      <label for="auszugType" class="selectLabel">
+        <p class="label">Auszug Type</p>
+        <select class="size" name="auszugTypeSelect" id="auszugTypeSelect">
+          <option value="frontschublade">Frontschublade</option>
+          <option value="innenschublade">Innenschublade</option>
+        </select>
+      </label>
+      <label for="part" class="selectLabel">
+        <p class="label">Part</p>
+        <select class="size" name="part" id="part">
+          <option value="bottom">Bottom</option>
+          <option value="left">Left</option>
+          <option value="right">Right</option>
+          <option value="front">Front</option>
+          <option value="back">Back</option>
+          <option value="blum">Blum</option>
+          <option value="siphon_plate">Siphon Plate</option>
+          <option value="mat">Antislip Mat</option>
+          <option value="socket">Socket</option>
+          <option value="powerSupply">PowerSupply</option>
+          <!-- <option value="cable">Cable</option> -->
+        </select>
+      </label>
+      <label for="material" class="selectLabel">
+        <p class="label">Material</p>
+        <select class="size" name="material" id="material">
+          <option value="0xEEEEED">Seidenweiss</option>
+          <option value="0xB0B0A9">Oriongrau</option>
+          <option value="0x4F5250">Indiumgrau</option>
+          <option value="0x1A1718">Terraschwarz</option>
+        </select>
+      </label>
+    </div>
+    <div class="checkboxGroup">
+      <label for="matState" class="checkboxLabel">
+        <p class="label">Show Antislip-Mat</p>
+        <input name="matState" id="matStateInput" type="checkbox" checked />
+      </label>
+      <label for="socketState" class="checkboxLabel">
+        <p class="label">Show Socket</p>
+        <input name="socketState" id="socketStateInput" type="checkbox" checked />
+      </label>
+    </div>
+  </div>
+  <div id="third" class="controller">
+    <label for="holeHeight" class="inputLabel">
+      <p class="label">Height of Siphon Plate</p>
+      <input class="size" name="holeHeightSlider" id="holeHeightSlider" type="range" min="10" max="300" value="118" />
+      <input class="inputText" name="holeHeightInput" id="holeHeightInput" type="number" max="300" min="10" minlength="1"
+        maxlength="3" />
+    </label>
+    <label for="holewidth" class="inputLabel">
+      <p class="label">Width of Siphon Plate</p>
+      <input class="size" name="holeWidthSlider" id="holeWidthSlider" type="range" min="100" max="300" value="144" />
+      <input class="inputText" name="holeWidthInput" id="holeWidthInput" type="number" max="300" min="50" minlength="1"
+        maxlength="3" />
+    </label>
+    <label for="holeLength" class="inputLabel">
+      <p class="label">Length of Siphon Plate</p>
+      <input class="size" name="holeLengthSlider" id="holeLengthSlider" type="range" min="100" max="400" value="100" />
+      <input class="inputText" name="holeLengthInput" id="holeLengthInput" type="number" max="300" min="50"
+        minlength="1" maxlength="3" />
+    </label>
+    <label for="holePosition" class="inputLabel">
+      <p class="label">Position of Siphon Plate</p>
+      <input class="size" name="holePositionSlider" id="holePositionSlider" type="range" min="-100" max="100"
+        value="0" />
+      <input class="inputText" name="holePositionInput" id="holePositionInput" type="number" max="100" min="-100"
+        minlength="1" maxlength="3" />
+    </label>
+    <div class="checkboxGroup">
+      <label for="holeState" class="checkboxLabel">
+        <p class="label">Show Siphon-Plate</p>
+        <input name="holeState" id="holeStateInput" type="checkbox" checked />
+      </label>
+    </div>
+    <label for="holeType" class="selectLabel">
+      <p class="label">Type of Siphon Plate</p>
+      <select class="size" name="holeType" id="holeType">
+        <option value="luxury">Luxury</option>
+        <option value="eco">Eco</option>
+      </select>
+    </label>
+    <label for="holeNumber" class="selectLabel">
+      <p class="label">Number of Siphon Plate</p>
+      <select class="size" name="holeNumber" id="holeNumber">
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </label>
+  </div>
+</body>
+
+</html>
+
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js'></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/mrdoob/Three.js@r92/examples/js/loaders/GLTFLoader.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/mrdoob/Three.js@r92/examples/js/loaders/DRACOLoader.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/mrdoob/Three.js@r92/examples/js/controls/OrbitControls.js'></script>
+<script type="module"
+  src="https://cdn.jsdelivr.net/npm/three@0.126.1/examples/jsm/geometries/RoundedBoxGeometry.js"></script>
+<script type="module"
+  src="https://cdn.jsdelivr.net/npm/three@0.126.1/examples/jsm/lines/LineSegmentsGeometry.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/three@0.126.1/examples/jsm/lines/Wireframe.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/three@0.126.1/examples/jsm/lines/LineMaterial.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.js"></script>
+<script type="module" src='src/index.js'></script>
